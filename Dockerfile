@@ -1,6 +1,7 @@
 FROM node:7
+COPY index.js /app
+COPY package.json /app
 WORKDIR /app
 RUN npm install
-COPY . /app
-CMD node index.js
 EXPOSE 5800
+CMD node index.js

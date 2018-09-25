@@ -1,29 +1,29 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: nginx
+  name: api_users
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: nginx
+        app: api_users
     spec:
       containers:
-      - name: nginx
-        image: nginx:stable-alpine
+      - name: api_users
+        image: leviatan/api_users
         ports:
         - containerPort: 8500
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
+  name: api_users
   labels:
-    app: nginx
+    app: api_users
 spec:
   selector:
-    app: nginx
+    app: api_users
   ports:
     - protocol: TCP
       port: 8500
