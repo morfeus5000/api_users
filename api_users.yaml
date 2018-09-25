@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: api-users
-        image: leviatan/api-users
+        image: api_users:latest
         ports:
         - containerPort: 8500
 ---
