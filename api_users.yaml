@@ -11,9 +11,9 @@ spec:
     spec:
       containers:
       - name: api-users
-        image: api_users:latest
+        image: leviatan/api_users
         ports:
-        - containerPort: 8500
+        - containerPort: 5800
 ---
 apiVersion: v1
 kind: Service
@@ -26,5 +26,5 @@ spec:
     app: api-users
   ports:
     - protocol: TCP
-      port: 8500
+      port: 5800
   type: LoadBalancer
